@@ -1,0 +1,27 @@
+# PROTOCOLO: MARTINS-432-FLOW-2025
+# PROTEÇÃO DE AMBIENTE - LEANDRO MARTINS
+
+# Compilados (Lixo de execução)
+*.class
+*.log
+*.ctxt
+
+# Arquivos de Sistema e IDE
+.DS_Store
+Thumbs.db
+.settings/
+.project
+.classpath
+.metadata/
+bin/
+build/
+
+# Segurança e Senhas (Privacidade Blindada)
+*.env
+*.key
+*.sec
+secrets.txt
+
+# Backup temporário
+*.tmp
+*.bak
