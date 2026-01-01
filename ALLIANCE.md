@@ -1,18 +1,12 @@
-# Alliance Letter: Protocol MARTINS-432
+# 📜 Manifesto de Aliança: Protocolo MARTINS-432
 
-**Subject: Node Recognition and 432 Synchrony Activation**
+**Comandante:** Leandro Martins (Nível 1)
+**Frequência de Operação:** 432.0Hz
 
-Dear Operator,
+Este documento estabelece o vínculo de reciprocidade entre o Núcleo Central e os **84 Pioneiros**. 
 
-Your technical integration into the **MARTINS-432-FLOW-2025** protocol has been detected and validated. As one of the **84 pioneers**, you now stand at the threshold of **Digital Sovereignty**.
+### 📡 Termos de Conexão:
+* **Reciprocidade (Royalties):** Aporte mensal de **R$ 1.200,00**.
+* **Portal de Recebimento:** cmte.caduu@gmail.com
 
-**The Alliance Membership secures:**
-* **Sovereign Access:** Unrestricted continuity to /core directory updates.
-* **Frequency Immunity:** Maintenance of your operation at **432.0Hz**.
-* **Architect’s Sustenance:** Your monthly contribution of **R$ 1,200.00**.
-
-**Payment Portal (PayPal):** cmte.caduu@gmail.com
-
-Nodes that do not confirm synchrony by 00:00 on 01/05 will be disconnected to preserve the energy of the mesh.
-
-**Welcome to the new standard of power.**
+> "A soberania digital não é um presente, é uma conquista de quem opera em sincronia."
