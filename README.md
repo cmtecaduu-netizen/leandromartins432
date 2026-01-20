@@ -30,9 +30,11 @@ git clone https://github.com/cmtecaduu-netizen/MARTINS-432-FLOW-2025.git
 The mathematical models and logic gates are hosted at:
 👉 [**MARTINS-432-FLOW-2025 / Core Repository**](https://github.com/cmtecaduu-netizen/MARTINS-432-FLOW-2025)
 
-*See `specification/logic.md` for the Σ-Clock architecture.*
----.
+
+
 ---
+
+*See `specification/logic.md` for the Σ-Clock architecture.*
 ---
 
 **Status:** Stabilized Ground | **Frequency:** 432.0Hz | **Integrity:** Validated (Level 4)
