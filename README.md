@@ -21,8 +21,12 @@ MARTINS-432-FLOW-2025 is more than a synchronization system; it is a defense fra
 > Within MARTINS-432-FLOW-2025, **Operational Silence** is the proof of sovereignty.
 
 ### 🚀 Global Setup
-```bash
-git clone [https://github.com/cmtecaduu-netizen/MARTINS-432-FLOW-2025.git](https://github.com/cmtecaduu-netizen/MARTINS-432-FLOW-2025.git)
+
+
+git clone https://github.com/cmtecaduu-netizen/MARTINS-432-FLOW-2025.git
+
 ---
+---
+
 **Status:** Stabilized Ground | **Frequency:** 432.0Hz | **Integrity:** Validated (Level 4)
 ---
