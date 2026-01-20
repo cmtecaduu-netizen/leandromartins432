@@ -22,20 +22,16 @@ MARTINS-432-FLOW-2025 is more than a synchronization system; it is a defense fra
 
 ### 🚀 Global Setup
 
-
-git clone https://github.com/cmtecaduu-netizen/MARTINS-432-FLOW-2025.git
-
+### 🚀 Core Implementation (Operational)
+python main.py
+git clone https://github.com/leandromartins432/README.git
 --- 
 ### 📂 Technical Repository & Specifications
 The mathematical models and logic gates are hosted at:
-👉 [**MARTINS-432-FLOW-2025 / Core Repository**](https://github.com/cmtecaduu-netizen/MARTINS-432-FLOW-2025)
-
-
+👉 [**MARTINS-432-FLOW-2025 / Core Engine**](https://github.com/leandromartins432/README)
 
 ---
 
 *See `specification/logic.md` for the Σ-Clock architecture.*
 ---
-
-**Status:** Stabilized Ground | **Frequency:** 432.0Hz | **Integrity:** Validated (Level 4)
----
+**Status:** OPERATIONAL | **Frequency:** 432.0Hz | **Mental State:** Leandro da lua Martins 
