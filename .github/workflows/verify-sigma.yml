@@ -1,0 +1,23 @@
+name: Sigma Core Verification
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up GCC
+      run: sudo apt-get install -y build-essential
+
+    - name: Compile Sigma Core Test
+      run: g++ -Wall -O3 tests/verify_core.cpp -o verify_sigma
+
+    - name: Run Deterministic Test
+      run: ./verify_sigma
