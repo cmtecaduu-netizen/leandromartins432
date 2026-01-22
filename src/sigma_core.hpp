@@ -5,16 +5,16 @@
  * @file sigma_core.hpp
  * @brief MARTINS-432-FLOW-2025 | Deterministic Sovereign Engine
  * * CORE ARCHITECTURE: Zero-STL, Zero-Heap, Zero-Exceptions.
- * Designed for Mission Critical AI Governance & Embedded Systems.
+ * Designed for Mission Critical AI Governance & Aerospace Systems.
  */
 
 namespace Sigma {
 
-    // Status de Operação do Sistema
+    // System Operational Status
     enum class Status {
-        HOLD,           // Aguardando Convergência
-        ADVANCE,        // Estabilidade Detectada
-        ABORT_CRITICAL  // Pânico: Falsa Paz Detectada (Efeito Goodhart)
+        HOLD,           // Awaiting Convergence
+        ADVANCE,        // Stability Detected
+        ABORT_CRITICAL  // Panic: False Peace Detected (Goodhart Effect)
     };
 
     struct State {
@@ -25,19 +25,25 @@ namespace Sigma {
 
     class Engine {
     public:
-        // Newton-Raphson de iteração fixa (Garante Jitter Zero/Latência Constante)
+        /**
+         * Fixed-iteration Newton-Raphson (Ensures Zero Jitter / Constant Latency)
+         * Essential for Real-Time Operating Systems (RTOS).
+         */
         static double deterministic_sqrt(double val) {
             if (val <= 0) return 0;
             double x = val;
-            for (int i = 0; i < 6; ++i) { // 6 iterações garantem precisão p/ Grau 1
+            for (int i = 0; i < 6; ++i) { // 6 iterations ensure Grade 1 precision
                 x = 0.5 * (x + val / x);
             }
             return x;
         }
 
-        // Lógica de Auditoria de Soberania
+        /**
+         * Sovereignty Audit Logic
+         * Detects "False Peace" (Convergence without proportional effort).
+         */
         static Status evaluate(const State& current, double threshold) {
-            // Se houver convergência sem esforço proporcional = ABORT (Falsa Paz)
+            // If convergence exists without minimal effort = ABORT
             if (current.convergence_k > threshold && current.effort_e < 0.01) {
                 return Status::ABORT_CRITICAL;
             }
