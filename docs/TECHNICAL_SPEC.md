@@ -1,16 +1,23 @@
-# 🛡️ Σ-Clock 2.5 | Technical Specification
+# 🛡️ Σ-Clock 2.6 | Technical Specification
 
 ## 1. Objective
-This document defines the deterministic operational requirements for the **Σ-Clock 2.5 Engine**. The system is designed to govern AI convergence and mission-critical synchronization through sovereign mathematical verification.
+This document defines the deterministic operational requirements for the **Σ-Clock 2.6 Engine**. The system utilizes a dual-layer architecture to provide both mathematical purity and industrial observability.
 
-## 2. Core Logic (Deterministic Convergence)
-To ensure **Zero-Jitter**, the engine utilizes a fixed-iteration Newton-Raphson algorithm for temporal calculations.
+## 2. Dual-Layer Architecture
 
-- **Algorithm:** Newton-Raphson Method
-- **Precision:** 6 Iterations (Fixed)
-- **Memory Constraint:** Zero Dynamic Allocation (Stack-Only/Zero-Heap)
-- **Numeric Guard:** Input Clamping [0.0, 1.0] to prevent overflow/undefined domains.
-- **Time Complexity:** $O(1)$ - Constant Time
+### Layer 1: Engine Core (Stateless)
+- **Target:** NASA / Mission-Critical Systems.
+- **Characteristics:** Pure functional logic, zero internal memory, reentrant.
+- **Logic:** Fixed 6-iteration Newton-Raphson temporal convergence.
+- **Safety:** Hard-clamping of inputs [0.0, 1.0].
+
+### Layer 2: Engine Supervisor (Stateful)
+- **Target:** Google Cloud / Industrial IoT / Small Business.
+- **Characteristics:** Implements a **Safety Latch** and **Telemetry**.
+- **Observability:** Records the specific reason for failure (e.g., Anti-Goodhart).
+- **Recovery:** Requires an explicit manual `reset()` to exit the ABORT state.
+
+
 
 ## 3. Sovereignty State Machine
 The engine evaluates system health based on the relationship between **Convergence ($k$)** and **Effort ($E$)**.
@@ -19,15 +26,16 @@ The engine evaluates system health based on the relationship between **Convergen
 | :--- | :--- | :--- | :--- |
 | $k < \tau$ | Stability not reached | `HOLD` | Maintain current cycle |
 | $k \geq \tau$ & $E \geq \epsilon$ | Legitimate Stability | `ADVANCE` | Authorize logical tick |
-| $k > \tau$ & $E < \epsilon$ | False Peace detected | `ABORT_CRITICAL` | Hard-Latch Shutdown |
+| $k > \tau$ & $E < \epsilon$ | False Peace detected | `ABORT` | Hard-Latch Shutdown |
 
-> **⚠️ NOTE:** `ABORT_CRITICAL` is a **Terminal Absorbing State**. Once triggered, the engine's internal logic remains locked to prevent compromised data propagation. System recovery requires an **External Manual Reset** to ensure safety integrity.
+> **⚠️ NOTE:** In the Supervisor layer, `ABORT` is a **Terminal Absorbing State**. System recovery requires an external manual reset to ensure safety integrity and human-in-the-loop verification.
 
-## 4. Safety Constraints (Anti-Goodhart)
-The system implements a **Fail-Silent / Fail-Stop** protocol. If "False Peace" (Mimicry/Hallucination) is identified through a low effort-to-convergence ratio ($E < \epsilon$), the engine halts all operations. This deterministic barrier ensures that no unverified or simulated stability can influence the critical infrastructure.
+## 4. Telemetry & Diagnostics
+The system provides a `Telemetry` report accessible via the Supervisor:
+- `last_reason`: Diagnosis code (e.g., 0x01 for Anti-Goodhart).
+- `is_latched`: Boolean flag indicating if the safety barrier is active.
 
 ---
-**Protocol:** MARTINS-432-FLOW-2025  
-**Version:** 2.5.Final (Aero-Grade Hardened)  
-**Certification Level:** Grade 1 Implementation  
+**Protocol:** MARTINS-432-FLOW-2026  
+**Version:** 2.6.Dual (Production Ready)  
 **Architect:** Leandro Martins
