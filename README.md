@@ -1,3 +1,5 @@
+![Sigma Verification](https://github.com/leandromartins432/leandromartins432/actions/workflows/verify-sigma.yml/badge.svg)
+
 # MARTINS-432-FLOW-2025 | AELOH-432 Integration
 ## Epistemic Governance Protocol and Hardware/AI Synchronization
 
