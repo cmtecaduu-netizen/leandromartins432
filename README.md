@@ -1,4 +1,5 @@
-![Sigma Verification](https://github.com/cmteceduu-netizen/leandromartins432/actions/workflows/verify-sigma.yml/badge.svg)
+
+![Sigma Verification](https://github.com/cmtecaduu-netizen/leandromartins432/actions/workflows/verify-sigma.yml/badge.svg?branch=main)
 
 
 # MARTINS-432-FLOW-2025 | AELOH-432 Integration
