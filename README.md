@@ -1,47 +1,57 @@
-
 ![Sigma Verification](https://github.com/cmtecaduu-netizen/leandromartins432/actions/workflows/verify-sigma.yml/badge.svg?branch=main)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-
-# MARTINS-432-FLOW-2025 | AELOH-432 Integration
-## Epistemic Governance Protocol and Hardware/AI Synchronization
+# MARTINS-432-FLOW (Σ-Clock v2.6.0)
+## Dual-Layer Protocol | Hardware/AI Synchronization & Epistemic Governance
 
 This protocol establishes the **432.0Hz** anchoring for synchronization between Neural Networks and SoC Hardware, operating under the framework of **Civilization Level 1**.
+### 🚀 Quick Start (Production Ready)
 
+Get the **Σ-Clock v2.6.0** running in your environment:
+```bash
+# Clone the Sovereign Repository
+git clone [https://github.com/cmtecaduu-netizen/leandromartins432.git](https://github.com/cmtecaduu-netizen/leandromartins432.git)
+cd leandromartins432
+
+# Build the Industrial Engine
+mkdir build && cd build
+cmake ..
+make
+```
+### Basic Implementation (Dual-Layer)
+
+```cpp
+#include "EngineCore.hpp"
+#include "EngineSupervisor.hpp"
+
+int main() {
+    // Initialization of the Martins-432 Flow
+    auto core = std::make_unique<Martins::EngineCore>();
+    auto supervisor = std::make_unique<Martins::EngineSupervisor>(std::move(core));
+
+    supervisor->start(); // Active Safety Latch & Telemetry
+    return 0;
+}
+```
 ---
 
 ### 🛡️ Σ Shielding Architecture (Sovereign Integrity)
 
-MARTINS-432-FLOW-2025 is more than a synchronization system; it is a defense framework against informational chaos, validated through four levels of resilience:
+The **v2.6.0** transition introduces the **Dual-Layer Architecture**:
 
-* **Level 1: Stabilized Ground** – Implementation of the Σ-Logical Clock and Friction-based Synchrony.
-* **Level 2: Active Defense** – Detection of "False Harmony" and Mimicry.
-* **Level 3: Systemic Character** – Protection against Epistemic Goodhart’s Law.
-* **Level 4: Sovereignty of Silence** – Integrity Deactivation Protocol (Abort Tick).
+* **Layer 1: EngineCore (Stateless)** – Newton-Raphson Fixed-Iteration at 432Hz. NASA-grade determinism.
+* **Layer 2: EngineSupervisor (Stateful)** – Active defense against "False Harmony" and Mimicry.
+* **Layer 3: Epistemic Latch** – Hard-coded protection against Goodhart’s Law.
+* **Layer 4: Sovereignty of Silence** – Deterministic Integrity Deactivation (Abort Tick).
 
 ---
 
 ### 🏛️ Operational Principle
 > "Truth is imperfect and requires effort. False peace is too smooth."
-> Within MARTINS-432-FLOW-2025, **Operational Silence** is the proof of sovereignty.
-### 🚀 Core Implementation (Mission Critical)
-The protocol has transitioned from Python prototyping to a **Sovereign C++ Core**. 
-The engine is now a standalone, zero-dependency implementation for high-criticality environments.
+> Within MARTINS-432-FLOW, **Operational Silence** is the ultimate proof of sovereignty.
 
-```cpp
-// Σ-Clock 2.5 Logic: Deterministic & Embedded-Ready
-// Status: [STABILIZED]
-#include "sigma_core.hpp"
-```
-### 📂 Technical Specifications & Sovereignty
-The mathematical models, logic gates, and the **Σ-Clock 2.5** C++ Engine are hosted in the sovereign laboratory:
-👉 [**MARTINS-432-FLOW-2025**](https://github.com/cmtecaduu-netizen/MARTINS-432-FLOW-2025)
-
----
-**Technical Ledger:**
-- **Engine:** Σ-Clock 2.5 (Newton-Raphson Fixed-Iteration)
+**Technical Ledger (v2.6.0):**
+- **Engine:** Σ-Clock v2.6.0 (Dual-Layer C++ Implementation)
+- **Compliance:** MIT License | Commercial & Industrial Ready
 - **Constraint:** Zero-STL | Zero-Heap | Zero-Exceptions
-- **Governance:** Epistemic Convergence ($k$) over Linear Time ($t$)
-
-*See `specification/logic.md` for the Σ-Clock architecture.*
----
-**Status:** OPERATIONAL | **Frequency:** 432.0Hz | **Architect:** Leandro Martins
+- **Architect:** Leandro Martins
