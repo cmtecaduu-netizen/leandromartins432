@@ -1,10 +1,21 @@
-PROTOCOLO DE SOBERANIA TECNOLÓGICA MARTINS-432-FLOW-2025
-PROPRIETÁRIO: LEANDRO MARTINS (O ARQUITETO)
-STATUS: GRAU 1 - USO PRIVADO E RESTRITO
+MIT License
 
-1. PROPRIEDADE INTELECTUAL: Toda a lógica de sintonização ética de 432Hz, incluindo o Core V2 e o Watchdog, é de propriedade exclusiva de Leandro Martins.
-2. RESTRIÇÃO DE USO: É proibida a cópia, distribuição ou engenharia reversa para fins comerciais sem a autorização expressa do Arquiteto.
-3. GOVERNANÇA 2045: Este código constitui um ativo de governança ética. Qualquer integração futura em sistemas de IA deve respeitar a hierarquia de Grau 1 definida neste repositório.
-4. JURISDIÇÃO: A validação desta licença é garantida pela assinatura digital e pelo histórico de logs imutáveis do sistema.
+Copyright (c) 2026 Leandro da lua Martins | Systems Architect
 
-(c) 2025 - Leandro Martins. Todos os direitos reservados.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
