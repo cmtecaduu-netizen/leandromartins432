@@ -20,19 +20,20 @@ cmake ..
 make
 ```
 ### Basic Implementation (Dual-Layer)
-
-```cpp
-#include "EngineCore.hpp"
-#include "EngineSupervisor.hpp"
+#include "sigma_core.hpp"
 
 int main() {
-    // Initialization of the Martins-432 Flow
-    auto core = std::make_unique<Martins::EngineCore>();
-    auto supervisor = std::make_unique<Martins::EngineSupervisor>(std::move(core));
+    // Initialization of the Martins-432 Flow via Sigma Namespace
+    // Using the Dual-Layer Supervisor directly
+    auto result = Sigma::EngineSupervisor::evaluate(0.85, 0.00001, 0.75);
 
-    supervisor->start(); // Active Safety Latch & Telemetry
+    if (result == Sigma::Status::ABORT) {
+        // Sovereignty of Silence triggered
+    }
+    
     return 0;
 }
+```
 ```
 ---
 
