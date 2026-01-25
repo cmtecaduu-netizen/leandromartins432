@@ -32,10 +32,8 @@ int main() {
     }
     
     return 0;
-}
-```
-```
----
+    }
+
 
 ### 🛡️ Σ Shielding Architecture (Sovereign Integrity)
 
