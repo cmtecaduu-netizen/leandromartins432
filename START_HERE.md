@@ -1,29 +1,66 @@
-# 🏛️ START_HERE.md: Entry Protocol
+# 🏛️ START_HERE.md — Entry Protocol
 
-### 🛰️ Overview for Engineers and Researchers
-If you have cloned this repository, you are likely seeking a solution for **Synchronization Entropy** and **Epistemic Drift** in large-scale AI systems. The **MARTINS-432-FLOW** is not a conventional software framework; it is an integrity protocol designed to anchor processing logic to the physical determinism of the hardware.
+## 🛰️ Overview for Engineers and Researchers
 
-### 🛡️ Technical Pillars (Auditory Scope)
+If you have cloned this repository, you are likely exploring approaches to mitigate **Synchronization Entropy** and **Epistemic Drift** in large-scale AI systems.
 
-1.  **C++ Zero-STL Architecture**: The system core deliberately avoids the Standard Template Library (STL) to eliminate allocation-induced *jitter* and ensure deterministic execution times at the silicon level.
-2.  **Σ-Clock (432Hz)**: The synchronization engine operates in rigorous cycles of **2.3148 ms**. Any process exceeding this temporal window triggers the **Abort Tick** mechanism, preventing the propagation of inconsistent or "hallucinated" logical states.
-3.  **EngineSupervisor**: A governance layer that validates whether AI output complies with established safety locks before permitting execution at the SoC (System on Chip) level.
+**MARTINS-432-FLOW** is an experimental integrity protocol focused on deterministic supervision, timing governance, and execution coherence at system level.
 
-### 🚀 Benchmarking Guidelines
-If you are integrating the **EngineCore** into TPU clusters, Tensor chips, or AI Safety simulation environments, focus on the following indicators:
+It is not a conventional software framework, but a research-oriented architecture designed to study low-level control mechanisms and system stability under constrained execution models.
 
-* **Tail Latency (P99)**: Observe the drastic reduction in latency spikes following the implementation of the Σ-Clock.
-* **Signal Coherence**: Analyze how the protocol interrupts the probabilistic drift of massive models through a physical time barrier.
-* **Overhead Efficiency**: Evaluate the performance of the Zero-STL implementation compared to architectures based on heavy runtimes.
+---
 
-### 🏛️ Sovereign Declaration
+## 🛡️ Technical Pillars (Audit Scope)
+
+### 1. C++ Zero-STL Architecture
+The system core minimizes reliance on the C++ Standard Template Library (STL) to reduce allocation variance and runtime nondeterminism.
+
+Primary objective: improve predictability and temporal stability under high-load execution.
+
+### 2. Σ-Clock Synchronization Engine (432Hz Reference)
+The synchronization engine operates in cycles of approximately **2.3148 ms**.
+
+Each execution window is monitored. Timing overruns may trigger an **Abort Tick** mechanism to prevent uncontrolled state divergence.
+
+### 3. EngineSupervisor Layer
+A governance module responsible for validating execution integrity and enforcing safety constraints before downstream propagation.
+
+This layer acts as an internal audit and control mechanism.
+
+---
+
+## 🚀 Benchmarking Guidelines
+
+When integrating or simulating the **EngineCore** in experimental environments, observe the following indicators:
+
+- **Tail Latency (P99)**  
+  Monitor latency stability under sustained load.
+
+- **Signal Coherence**  
+  Evaluate long-term consistency of internal state transitions.
+
+- **Runtime Overhead**  
+  Compare Zero-STL performance against standard runtime-based architectures.
+
+Recommended usage: controlled benchmarks and isolated test environments.
+
+---
+
+## 🏛️ Project Status
+
 This project is currently in the **Early Research / Experimental Adoption** phase.
 
-* **Status**: Operational.
-* **Reference Frequency**: 432Hz.
-* **Objective**: Governance Infrastructure for Type 1 Civilization.
+- **Status**: Prototype / Research Grade  
+- **Reference Frequency**: 432Hz (logical timing reference)  
+- **Primary Objective**: System Integrity and AI Governance Experiments
+
+This repository is intended for research, experimentation, and technical evaluation. It is not certified for production-critical environments.
+
+---
 
 > *"Silence is not the absence of signal; it is the presence of absolute order."*
 
 ---
-© 2026 MARTINS-432-FLOW Protocol | [leandromartins432](https://github.com/leandromartins432)
+
+© 2026 MARTINS-432-FLOW Protocol  
+Maintainer: https://github.com/leandromartins432
