@@ -1,136 +1,89 @@
-# MARTINS-432-FLOW — System Architecture
+# MARTINS-432-FLOW — System Architecture (v2.6.Dual)
 
 ## 1. Purpose
 
-This document describes the internal architecture, execution model, and governance mechanisms of the MARTINS-432-FLOW protocol.
+This document describes the internal architecture, execution model, and governance mechanisms of the MARTINS-432-FLOW protocol. 
 
-It is intended for engineers, auditors, and researchers evaluating deterministic system supervision.
+It establishes the technical foundation for the **v2.6.Dual** transition, focusing on the dual-layer separation between pure mathematical evaluation and stateful integrity supervision.
 
 ---
 
 ## 2. High-Level Overview
 
-The system is organized into three primary layers:
+The system is organized into a **Dual-Layer Sovereign Architecture**:
 
-1. EngineCore — Execution Layer
-2. Σ-Clock — Temporal Governance Layer
-3. EngineSupervisor — Integrity & Safety Layer
+1. **Layer 1: EngineCore (Stateless)** — The mathematical heart.
+2. **Layer 2: EngineSupervisor (Stateful)** — The telemetry and safety sentinel.
 
-Each layer operates independently but communicates through a synchronized control interface.
+Each layer operates within the `Sigma` namespace to ensure isolation and modularity in industrial SoC environments.
 
 ---
 
 ## 3. System Components
 
-### 3.1 EngineCore
+### 3.1 EngineCore (`Sigma::EngineCore`)
 
-Responsible for deterministic task execution.
+The pure execution layer. It is designed to be **stateless**, meaning it has no internal memory of previous cycles, ensuring total determinism.
 
-Main functions:
-- Input processing
-- State transition
-- Output generation
-- Internal consistency checks
-
-Designed to operate under fixed-time constraints.
+**Key Attributes:**
+- **Newton-Raphson Implementation**: Fixed-iteration for constant-time execution.
+- **Pure Evaluation**: Input parameters are processed through the `evaluate` gate.
+- **Statelessness**: Eliminates side-effects and race conditions.
 
 ---
 
-### 3.2 Σ-Clock
+### 3.2 EngineSupervisor (`Sigma::EngineSupervisor`)
 
-Provides logical time synchronization and cycle enforcement.
+The stateful governance layer. It manages the system's "memory" regarding safety and faults.
 
-Responsibilities:
-- Cycle generation (≈2.3148 ms)
-- Drift monitoring
-- Overrun detection
-- Abort signaling
-
-Acts as the primary temporal authority.
+**Key Attributes:**
+- **Telemetry Logging**: Tracks the reason for system halts (e.g., Anti-Goodhart violations).
+- **The Latch Mechanism**: Implements a safety lock that prevents execution after a critical failure until a manual `reset()` is issued.
+- **Sovereignty of Silence**: Triggers the `Status::ABORT` state when integrity is compromised.
 
 ---
 
-### 3.3 EngineSupervisor
-
-Supervises runtime integrity.
-
-Functions:
-- State validation
-- Safety policy enforcement
-- Fault detection
-- Controlled shutdown
-
-Operates independently from EngineCore.
-
----
-
-## 4. Execution Flow
+## 4. Execution Flow (432Hz Sync)
 
 ### 4.1 Initialization Phase
+1. Hardware clock calibration.
+2. Static memory pre-allocation.
+3. `Sigma::EngineSupervisor::reset()` to clear previous latches.
 
-1. Hardware clock calibration
-2. Static memory allocation
-3. Supervisor bootstrap
-4. Core activation
-
----
-
-### 4.2 Runtime Cycle
-
-Each cycle follows:
-
-1. Input sampling
-2. State verification
-3. Core execution
-4. Supervisor audit
-5. Commit or abort
-
-Total cycle budget: ≈2.3148 ms
+### 4.2 Runtime Cycle (≈2.3148 ms)
+1. **Input Sampling**: Capture `k` (coefficient) and `e` (error).
+2. **Supervisor Audit**: Check if `is_latched` is true.
+3. **Core Evaluation**: Mathematical gate processing.
+4. **Telemetry Update**: Log reasons for any `ABORT` status.
 
 ---
 
-## 5. Memory Model
+## 5. Memory & Safety Model
 
-- Preallocated buffers
-- No dynamic heap growth
-- No STL containers
-- Fixed-size structures
-
-Objective: eliminate allocation-induced variance.
+- **Zero-STL / Zero-Heap**: No dynamic allocation during runtime.
+- **Manual Control**: Explicit use of `unsigned char` for `Status` to minimize memory footprint.
+- **Epistemic Latch**: Protection against Goodhart’s Law (mimicry detection).
 
 ---
 
-## 6. Failure Handling
+## 6. Failure Handling (Operational Protocol)
 
-| Condition          | Action        |
-|--------------------|---------------|
-| Timing overrun     | Abort Tick    |
-| State inconsistency| Reset cycle   |
-| Supervisor fault   | Safe halt     |
-| Clock drift        | Resync        |
-
----
-
-## 7. Security Model
-
-- Restricted system calls
-- No dynamic plugins
-- Verified builds
-- Isolated supervisor logic
+| Condition | Action | Implementation |
+| :--- | :--- | :--- |
+| **Logic Violation** | `Status::ABORT` | Instant halt via Supervisor |
+| **Integrity Breach** | `is_latched = true` | Permanent lock until reset |
+| **Nominal Hold** | `Status::HOLD` | Wait for next sync cycle |
+| **System Success** | `Status::ADVANCE` | Proceed to commit |
 
 ---
 
-## 8. Limitations
+## 7. Development Roadmap
 
-- Prototype-grade implementation
-- Limited hardware validation
-- No formal certification
-- Manual calibration required
+- **v2.6.Dual (Current)** — Implementation of Stateless/Stateful dual layers.
+- **v2.7** — Extended Hardware Abstraction Layer (HAL) for ARM/RISC-V.
+- **v3.0** — Formal Epistemic Verification & Civilizational Anchor.
 
 ---
 
-## 9. Development Roadmap
-
-- v0.3 — Multi-core validation
-- v0.4 — Formal verification
-- v0.5 — Public benchmark suite
+**Architect:** Leandro Martins  
+**Compliance:** MIT License | Industrial & Sovereign Ready
