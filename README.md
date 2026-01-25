@@ -6,6 +6,7 @@
 
 This protocol establishes the **432.0Hz** anchoring for synchronization between Neural Networks and SoC Hardware, operating under the framework of **Civilization Level 1**.
 ### 🚀 Quick Start (Production Ready)
+Documentation Index: [START HERE](./START_HERE.md) | [WHITEPAPER](./docs/WHITEPAPER.md) | [ARCHITECTURE](./docs/ARCHITECTURE.md) | [BENCHMARKS](./docs/BENCHMARKS.md)
 
 Get the **Σ-Clock v2.6.0** running in your environment:
 ```bash
