@@ -19,7 +19,10 @@ mkdir build && cd build
 cmake ..
 make
 ```
+
 ### Basic Implementation (Dual-Layer)
+
+```cpp
 #include "sigma_core.hpp"
 
 int main() {
@@ -32,8 +35,8 @@ int main() {
     }
     
     return 0;
-    }
-
+}
+```
 
 ### 🛡️ Σ Shielding Architecture (Sovereign Integrity)
 
