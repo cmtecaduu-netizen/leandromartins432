@@ -5,6 +5,15 @@
 ## Dual-Layer Protocol | Hardware/AI Synchronization & Epistemic Governance
 
 This protocol establishes the **432.0Hz** anchoring for synchronization between Neural Networks and SoC Hardware, operating under the framework of **Civilization Level 1**.
+---
+
+### 💼 Commercial Use & Enterprise Licensing
+If you intend to use **MARTINS-432-FLOW** in a commercial, production, or corporate environment, a separate commercial license is required.
+
+👉 **View [COMMERCIAL.md](COMMERCIAL.md) for licensing options, consultancy, and support services.**
+
+---
+
 ### 🚀 Quick Start (Evaluation & Testing)
 Documentation Index: [START HERE](./START_HERE.md) | [WHITEPAPER](./docs/WHITEPAPER.md) | [ARCHITECTURE](./docs/ARCHITECTURE.md) | [BENCHMARKS](./docs/BENCHMARKS.md)
 
