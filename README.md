@@ -67,3 +67,14 @@ The **v2.6.0** transition introduces the **Dual-Layer Architecture**:
 - **Compliance:** MARTINS-432-FLOW Evaluation License | All Rights Reserved
 - **Constraint:** Zero-STL | Zero-Heap | Zero-Exceptions
 - **Architect:** Leandro Martins
+---
+
+### 📊 Quality Assurance & Benchmarking
+The protocol includes a dedicated high-precision auditor: `AUDIT_BENCHMARK.py`.
+
+- **Mechanism:** High-resolution `busy_wait` temporal analysis.
+- **Metric:** Real-time Jitter and Standard Deviation measurement.
+- **Goal:** Empirical verification of the 432Hz deterministic pulse stability.
+
+To run the audit:
+`python AUDIT_BENCHMARK.py`
