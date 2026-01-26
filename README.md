@@ -55,6 +55,6 @@ The **v2.6.0** transition introduces the **Dual-Layer Architecture**:
 
 **Technical Ledger (v2.6.0):**
 - **Engine:** Σ-Clock v2.6.0 (Dual-Layer C++ Implementation)
-- **Compliance:**Compliance:** MARTINS-432-FLOW Evaluation License | All Rights Reserved
+- **Compliance:** MARTINS-432-FLOW Evaluation License | All Rights Reserved
 - **Constraint:** Zero-STL | Zero-Heap | Zero-Exceptions
 - **Architect:** Leandro Martins
