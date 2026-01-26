@@ -1,5 +1,5 @@
 ![Sigma Verification](https://github.com/cmtecaduu-netizen/leandromartins432/actions/workflows/verify-sigma.yml/badge.svg?branch=main)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg)
 
 # MARTINS-432-FLOW (Σ-Clock v2.6.0)
 ## Dual-Layer Protocol | Hardware/AI Synchronization & Epistemic Governance
@@ -55,6 +55,6 @@ The **v2.6.0** transition introduces the **Dual-Layer Architecture**:
 
 **Technical Ledger (v2.6.0):**
 - **Engine:** Σ-Clock v2.6.0 (Dual-Layer C++ Implementation)
-- **Compliance:** MIT License | Commercial & Industrial Ready
+- **Compliance:**Compliance:** MARTINS-432-FLOW Evaluation License | All Rights Reserved
 - **Constraint:** Zero-STL | Zero-Heap | Zero-Exceptions
 - **Architect:** Leandro Martins
