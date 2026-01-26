@@ -1,46 +1,53 @@
 import time
 import statistics
 
-# --- PROTOCOL CONFIGURATION ---
 TARGET_HZ = 432
-TARGET_PERIOD_NS = 1_000_000_000 / TARGET_HZ
-SAMPLES = 1000  # Number of cycles for empirical evidence
+TARGET_PERIOD_NS = int(1_000_000_000 / TARGET_HZ)
+SAMPLES = 1000
+
+def busy_wait(duration_ns):
+    start = time.perf_counter_ns()
+    while (time.perf_counter_ns() - start) < duration_ns:
+        pass
 
 def run_sovereign_audit():
-    print(f"🛡️ STARTING AUDIT: MARTINS-432-FLOW")
-    print(f"🎯 Target: {TARGET_HZ}Hz | Period: {TARGET_PERIOD_NS:.2f} ns")
+    print("🛡️ MARTINS-432-FLOW | Temporal Baseline Audit")
+    print(f"Target: {TARGET_HZ} Hz")
     print("-" * 50)
 
     deltas = []
-    
-    # --- EXTERNAL OBSERVATION LOOP ---
-    for i in range(SAMPLES):
-        start_time = time.perf_counter_ns()
-        
-        # MONITORING POINT:
-        # In this stage, we monitor the environment's timing precision.
-        # Future iterations will link directly to the Core's binary execution.
-        time.sleep(1/TARGET_HZ * 0.0001) 
-        
-        end_time = time.perf_counter_ns()
-        deltas.append(end_time - start_time)
+    timestamps = []
 
-    # --- STABILITY CALCULATIONS (JITTER ANALYSIS) ---
-    avg_delta = statistics.mean(deltas)
-    max_delta = max(deltas)
-    min_delta = min(deltas)
-    # Jitter variation index
-    stability_idx = 100 - ((max_delta - min_delta) / avg_delta * 100)
+    last = time.perf_counter_ns()
 
-    print(f"✅ AUDIT COMPLETE")
-    print(f"📊 Average Delta: {avg_delta:.2f} ns")
-    print(f"🚀 Cycle Stability: {stability_idx:.4f}%")
-    
-    if stability_idx > 99.9:
-        print("\n💎 STATUS: NASA-GRADE DETERMINISM VERIFIED")
+    for _ in range(SAMPLES):
+        busy_wait(TARGET_PERIOD_NS)
+
+        now = time.perf_counter_ns()
+        delta = now - last
+
+        deltas.append(delta)
+        timestamps.append(now)
+
+        last = now
+
+    avg = statistics.mean(deltas)
+    stdev = statistics.stdev(deltas)
+    max_d = max(deltas)
+    min_d = min(deltas)
+
+    jitter = max_d - min_d
+
+    print("✅ AUDIT COMPLETE\n")
+    print(f"Avg Period   : {avg:.2f} ns")
+    print(f"Std Dev      : {stdev:.2f} ns")
+    print(f"Max Deviation: {jitter:.2f} ns")
+
+    print("\nInterpretation:")
+    if jitter / avg < 0.01:
+        print("🟢 High temporal stability")
     else:
-        print("\n⚠️ STATUS: OPERATIONAL DRIFT DETECTED")
+        print("🟠 Environment-limited precision")
 
 if __name__ == "__main__":
     run_sovereign_audit()
-  
