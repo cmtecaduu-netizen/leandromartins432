@@ -78,3 +78,8 @@ The protocol includes a dedicated high-precision auditor: `AUDIT_BENCHMARK.py`.
 
 To run the audit:
 `python AUDIT_BENCHMARK.py`
+---
+### 🧪 Future Roadmap
+- [x] **v2.6.0:** Stable Core & External Audit Benchmark.
+- [ ] **v2.7.0 (Development):** Active Oversight via [Experimental Modules](./experimental).
+- [ ] 
